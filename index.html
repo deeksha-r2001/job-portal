@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--divinectorweb.com-->
+<head>
+    <meta charset="UTF-8">
+    <title>Job portal</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar navbar-default navbar-inverse">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Job Portal</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#section1">home</a></li>
+        
+
+        <li><a href="#section2">About</a></li>
+
+        <li><a href="#section3">contact Us</a></li>
+        <li><a href="#section4">Connect</a></li>
+        <li><a href="Login.php">Login</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+  <div class="section one" id="section1">
+</div>
+</nav>
+
+
+   
+   <div class="content">
+       <div class="thing">
+           <h2><i>Online Job Portal</i> </h2>
+       <p><i>Welcome to online Job Portal. It provides facility to the Job Seeker to search for various jobs as per his qualification. Here Job Seeker can registered himself on the web portal and create his profile along with his 
+        educational information. </i></p>
+       <a href="#">Learn More</a>
+       </div>
+   </div>
+   <div class="about-section" id="section2">
+    <div class="container">		  
+      <div class="">
+        <h2><i><b>About Us </b></i></h2>
+    <p>Here Job Seeker can registered himself on the web portal and create his profile along with his 
+      educational information. <br>Job Seeker can search various jobs and apply for the Job..</p>
+      <p>This Portal is also designed for the various employer who required to recruit employees in their organization. 
+    Employer can registered himself on the web portal and then he can upload information of various job vacancies in their organization. 
+    Employeer can view the applications of Job Seeker and send call latter to the job seekers.</p>
+  </div>
+  <br>
+  <br>
+  <br><br><br>
+  <h2><i><b>Contact Form</b></i></h2>
+  <div class="form-container" id="section3">
+    <form name="frmContact" id="" frmContact"" method="post"
+        action="" enctype="multipart/form-data"
+        onsubmit="return validateContactForm()">
+
+        <div class="input-row">
+            <label style="padding-top: 20px;">Name</label> <span
+                id="user_name" class="info"></span><br /> <input
+                type="text" class="input-field" name="user_name"
+                id="user_name" placeholder="John Dae"/>
+        </div>
+        <div class="input-row">
+            <label>Email</label> <span id="userEmail-info"
+                class="info"></span><br /> <input type="text"
+                class="input-field" name="user_email" id="user_email" placeholder="john@gmail.com"/>
+        </div>
+        <div class="input-row">
+            <label>Phone No</label> <span id="Phone no-info"
+                class="info"></span><br /> <input type="number"
+                class="input-field" name="Phoneno" id="Phoneno" placeholder="ex:96574326783"/>
+        </div>
+        <div class="input-row">
+            <label>Message</label> <span id="userMessage-info"
+                class="info"></span><br />
+            <textarea name="content" id="content"
+                class="input-field" cols="60" rows="6" placeholder="write something here..."></textarea>
+        </div>
+        <div>
+            <input type="submit" name="send" class="btn-submit"
+                value="Send" />
+
+            <div id="statusMessage"> 
+                    <?php
+                    if (! empty($message)) {
+                        ?>
+                        <p class='<?php echo $type; ?>Message'><?php echo $message; ?></p>
+                    <?php
+                    }
+                    ?>
+                </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"
+    type="text/javascript"></script>
+<script type="text/javascript">
+    function validateContactForm() {
+        var valid = true;
+
+        $(".info").html("");
+        $(".input-field").css('border', '#e0dfdf 1px solid');
+        var userName = $("#userName").val();
+        var userEmail = $("#userEmail").val();
+        var Phoneno = $("#Phoneno").val();
+
+        
+        if (userName == "") {
+            $("#userName-info").html("Required.");
+            $("#userName").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+        if (userEmail == "") {
+            $("#userEmail-info").html("Required.");
+            $("#userEmail").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+        if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+        {
+            $("#userEmail-info").html("Invalid Email Address.");
+            $("#userEmail").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+
+        if (Phoneno == "") {
+            $("#Phone no-info").html("Required.");
+            $("#Phoneno").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+        if (content == "") {
+            $("#userMessage-info").html("");
+            $("#content").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+        return valid;
+    }
+</script>
+
+  </div><br><br><br>
+  
+  <footer>
+    <h2><i><b>Connect With Us</b></i></h2>
+    <div class="social-buttons" id="section4">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    
+
+  </footer>
+    </header>
+
+</body>
+</html>
